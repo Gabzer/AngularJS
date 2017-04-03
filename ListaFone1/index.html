@@ -48,10 +48,9 @@
                     delete $scope.contato;
                 };
                 $scope.apagarContatos = function (contatos) {
-                    var contatosSelecionados = contatos.filter(function (contato) {
-                        if (contato.selecionado) return contato;
+                    $scope.contatos = contatos.filter(function (contato) {
+                        if (!contato.selecionado) return contato;
                     });
-                    console.log(contatosSelecionados);
                 };
             });
         </script>
